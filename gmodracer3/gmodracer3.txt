@@ -1,0 +1,30 @@
+"gmodracer3"
+{
+	"base"		"base"
+	"title"		"gmodRacer3"
+	"maps"		"^gmr_"
+	"menusystem"	"1"
+	"workshopid"	""
+
+	"settings"
+	{
+		1
+		{
+			"name"		"gmr_maxcars"
+			"text"		"Maximum Car Inventory"
+			"help"		"The maxiumum number of cars that can be stored in a inventory"
+			"type"		"Numeric"
+			"default"	"20"
+		}
+
+		
+		2
+		{
+			"name"		"gmr_maxraces"
+			"text"		"Allow Grenades"
+			"help"		"The maxiumum number of races before a map change"
+			"type"		"Numeric"
+			"default"	"3"
+		}
+	}
+}
