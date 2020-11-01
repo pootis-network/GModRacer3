@@ -42,6 +42,33 @@ translationTable = {
         SPOILEROPTION = "Spoiler Option",
         WHEELS = "Wheels",
         WHEELOPTION = "Tire Option",
+    },
+	-- spanish
+	 es = {
+        MUSIC_DISABLED = "¡Música deshabilitada!",
+        MUSIC_ENABLED = "¡Música habilitada!",
+        CHECKPOINTS = "PUNTOS DE CONTROL",
+        MONEY = "DINERO",
+        CUSTOMIZATION_TITLE = "Menú de personalización",
+        COLORMENUBUTTON = "Personalizar el color del coche",
+		BUYCARBUTTON = "Comprar coche",
+        CUSTOMIZECARBUTTON = "Personalizar coche",
+        COLORMENUTITLE = "Selector de color",
+        SETCOLORTEXT = "Establecer este color",
+        BUYTHECARSTRING = "Compra la ",
+        BUYUPGRADESSTRING = "Comprar actualizaciones para ",
+        DEFAULTBUMPERSTRING = "Parachoques delanteros",
+        BUMPERPARTTEXT = "Parachoque",
+        DEFBACKBUMPERSTRING = "Parachoques traseros",
+        BACKBUMPERTEXT = "Parachoques trasero",
+        SKIRTS = "Faldas",
+        SKIRTOPTION = "Opción de falda",
+        HOODS = "Campanas",
+        HOODOPTION = "Opción de capucha",
+        SPOILERS = "Spoilers",
+        SPOILEROPTION = "Opción de spoiler",
+        WHEELS = "Ruedas",
+        WHEELOPTION = "Opción de neumáticos",
     }
 }
 
