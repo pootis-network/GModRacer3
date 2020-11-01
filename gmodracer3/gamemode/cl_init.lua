@@ -40,11 +40,11 @@ local validEntries = {"0", "1"}
 for k, v in pairs(validEntries) do
 		if args[1] == "0" then
 		RunConsoleCommand("stopsound")
-			print(translationTable[playerLanguage]["MUSIC_DISABLED"])
+			print(L("MUSIC_DISABLED")
 			musicActive = false
 		end
 		if args[1] == "1" then
-		print(translationTable[playerLanguage]["MUSIC_ENABLED"])
+		print(L("MUSIC_ENABLED")
 			musicActive = true
 			musicLogic()
 		end
@@ -163,7 +163,7 @@ if  ply:InVehicle() and vehicleclass != "prop_vehicle_airboat" then
 	else
 	timer.Remove("timerHUD")
 	end
-	draw.SimpleText(translationTable[playerLanguage]["CHECKPOINTS"]..":", "RacingHUDSmall", ScrW()-235, ScrH()-125, Color(255,255,255,150), TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
+	draw.SimpleText(L("CHECKPOINTS")..":", "RacingHUDSmall", ScrW()-235, ScrH()-125, Color(255,255,255,150), TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
 	draw.SimpleText(laps, "RacingHUDV2", ScrW()-185, ScrH()-130, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	draw.SimpleText("/", "RacingHUD", ScrW()-125, ScrH()-110, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	draw.SimpleText(totalLaps, "RacingHUD", ScrW()-65, ScrH()-90, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
@@ -184,7 +184,7 @@ if  ply:InVehicle() and vehicleclass != "prop_vehicle_airboat" then
 	end
 end
 end
-draw.SimpleText(translationTable[playerLanguage]["MONEY"]..": $" .. ply:GetNWInt("money"), "RacingHUDSmall", ScrW()/2, ScrH()-10, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+draw.SimpleText(L("MONEY")..": $" .. ply:GetNWInt("money"), "RacingHUDSmall", ScrW()/2, ScrH()-10, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 hoveringNames()
 end)
 

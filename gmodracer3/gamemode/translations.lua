@@ -3,11 +3,15 @@
 
 
 -- obtain a player's language via convar
-playerLanguage = GetConVar("gmod_language"):GetString()
+--playerLanguage = GetConVar("gmod_language"):GetString()
 
--- incase of bug, presume english.
-if GetConVar("gmod_language"):GetString() == "" then
-    playerLanguage = "en"
+local convar = GetConVar("gmod_language")
+
+-- hotfix by TankNut
+function L(key)
+    local lang = translationTable[convar:GetString()] or translationTable["en"]
+
+    return lang[key] or key
 end
 
 -- translations go here.
