@@ -12,6 +12,10 @@ GM.EffectsOn = CreateClientConVar( "gmr_effects", "1", true, false )
 GM.LightsOn = CreateClientConVar( "gmr_lights", "1", true, false )
 
 -- thinned the client code, less to steal and more ram friendly
+
+-- translations, as suggested by github.
+include("translations.lua")
+
 include("shared.lua")
 include("logo.lua")
 include("cl_music.lua")
@@ -36,11 +40,11 @@ local validEntries = {"0", "1"}
 for k, v in pairs(validEntries) do
 		if args[1] == "0" then
 		RunConsoleCommand("stopsound")
-			print("Music disabled!")
+			print(translationTable[playerLanguage]["MUSIC_DISABLED"])
 			musicActive = false
 		end
 		if args[1] == "1" then
-		print("Music activated!")
+		print(translationTable[playerLanguage]["MUSIC_ENABLED"])
 			musicActive = true
 			musicLogic()
 		end
@@ -159,7 +163,7 @@ if  ply:InVehicle() and vehicleclass != "prop_vehicle_airboat" then
 	else
 	timer.Remove("timerHUD")
 	end
-	draw.SimpleText("CHECKPOINTS:", "RacingHUDSmall", ScrW()-235, ScrH()-125, Color(255,255,255,150), TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
+	draw.SimpleText(translationTable[playerLanguage]["CHECKPOINTS"]..":", "RacingHUDSmall", ScrW()-235, ScrH()-125, Color(255,255,255,150), TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
 	draw.SimpleText(laps, "RacingHUDV2", ScrW()-185, ScrH()-130, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	draw.SimpleText("/", "RacingHUD", ScrW()-125, ScrH()-110, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	draw.SimpleText(totalLaps, "RacingHUD", ScrW()-65, ScrH()-90, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
@@ -180,7 +184,7 @@ if  ply:InVehicle() and vehicleclass != "prop_vehicle_airboat" then
 	end
 end
 end
-draw.SimpleText("MONEY: $" .. ply:GetNWInt("money"), "RacingHUDSmall", ScrW()/2, ScrH()-10, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+draw.SimpleText(translationTable[playerLanguage]["MONEY"]..": $" .. ply:GetNWInt("money"), "RacingHUDSmall", ScrW()/2, ScrH()-10, Color(255,255,255,150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 hoveringNames()
 end)
 

@@ -47,7 +47,7 @@ local avg = 0
 	
 	menu:SetSize(250,500)
 	menu:SetPos((ScrW()/2) - 125, (ScrH()/2) - 250)
-	menu:SetTitle("Customization Menu")
+	menu:SetTitle(translationTable[playerLanguage]["CUSTOMIZATION_TITLE"])
 	menu:SetDraggable(false)
 	menu:ShowCloseButton(true)
 	menu:MakePopup(true)
@@ -55,18 +55,18 @@ local avg = 0
 	local colormenubutton = vgui.Create("Button", menu)
 	colormenubutton:SetSize(50,50)
 	colormenubutton:Dock( TOP )
-	colormenubutton:SetText("Customize Car Color")
+	colormenubutton:SetTitle(translationTable[playerLanguage]["COLORMENUBUTTON"])
 	
 	local carmenubutton = vgui.Create("Button", menu)
 	carmenubutton:SetSize((ScrW()/2)-400,50)
 	carmenubutton:Center()
 	carmenubutton:DockPadding( 0, 0, 0, 0 )
-	carmenubutton:SetText("Buy Cars")
+	carmenubutton:SetText(translationTable[playerLanguage]["BUYCARBUTTON")
 	
 	local customizecarsbutton = vgui.Create("Button", menu)
 	customizecarsbutton:SetSize(50,50)
 	customizecarsbutton:Dock( BOTTOM )
-	customizecarsbutton:SetText("Customize Car")
+	customizecarsbutton:SetText(translationTable[playerLanguage]["CUSTOMIZECARBUTTON"])
 	
 	
 	
@@ -82,7 +82,7 @@ local avg = 0
 	
 	ColorMenu:SetSize(250,500)
 	ColorMenu:SetPos((ScrW()/2) +125, (ScrH()/2) - 250)
-	ColorMenu:SetTitle("Color Picker")
+	ColorMenu:SetTitle(translationTable[playerLanguage]["COLORMENUTITLE"])
 	ColorMenu:SetDraggable(false)
 	ColorMenu:SetVisible(false)
 	ColorMenu:ShowCloseButton(true)
@@ -124,14 +124,14 @@ local avg = 0
 	colorbutton:SetSize( 250, 30 )
 	colorbutton:Dock( BOTTOM )
 	colorbutton:SetVisible( true )
-	colorbutton:SetText("Set This Color")
+	colorbutton:SetText(translationTable[playerLanguage]["SETCOLORTEXT"])
 	
 
 	local vendermenu = vgui.Create("DFrame")
 	
 	vendermenu:SetSize(750,500)
 	vendermenu:SetPos((ScrW()/2)-110, (ScrH()/2)-250)
-	vendermenu:SetTitle("Buy Cars")
+	vendermenu:SetTitle(translationTable[playerLanguage]["BUYCARBUTTON"])
 	vendermenu:SetVisible( false )
 	vendermenu:SetDraggable( false )
 	vendermenu:ShowCloseButton(true)
@@ -221,48 +221,48 @@ local avg = 0
 	car:SetLookAt( ( mn + mx ) *.2 )
 	
 	local buyButton = vgui.Create("DButton", vendermenu )
-	buyButton:SetText("Buy the " .. carlist[number].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[number].car .. "?")
 	buyButton:SetSize(0,45)
 	buyButton:Dock(BOTTOM)
 	
 	function buttonlist0:DoClick()
 	car:SetModel( cars[0].car )
-	buyButton:SetText("Buy the " .. carlist[0].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[0].car .. "?")
 	number = 0
 	end
 	
 	function buttonlist1:DoClick()
 	car:SetModel( cars[1].car )
-	buyButton:SetText("Buy the " .. carlist[1].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[1].car .. "?")
 	number = 1
 	end
 	
 	function buttonlist2:DoClick()
-	buyButton:SetText("Buy the " .. carlist[2].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[2].car .. "?")
 	car:SetModel( cars[2].car )
 	number = 2
 	end
 	
 	function buttonlist3:DoClick()
-	buyButton:SetText("Buy the " .. carlist[3].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[3].car .. "?")
 	car:SetModel( cars[3].car )
 	number = 3
 	end
 	
 	function buttonlist4:DoClick()
-	buyButton:SetText("Buy the " .. carlist[4].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[4].car .. "?")
 	car:SetModel( cars[4].car )
 	number = 4
 	end 
 	
 	function buttonlist5:DoClick()
-	buyButton:SetText("Buy the " .. carlist[5].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[5].car .. "?")
 	car:SetModel( cars[5].car )
 	number = 5
 	end
 	
 	function buttonlist6:DoClick()
-	buyButton:SetText("Buy the " .. carlist[6].car .. "?")
+	buyButton:SetText(translationTable[playerLanguage]["BUYTHECARSTRING"].." " .. carlist[6].car .. "?")
 	car:SetModel( cars[6].car )
 	number = 6
 	end		
@@ -276,7 +276,7 @@ local avg = 0
 	
 	customize:SetSize(900,600)
 	customize:Center()
-	customize:SetTitle("Customization Menu")
+	customize:SetTitle(translationTable[playerLanguage]["CUSTOMIZATION_TITLE"])
 	customize:SetVisible( false )
 	customize:SetDraggable( false )
 	customize:ShowCloseButton(true)
@@ -320,7 +320,7 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
         end
 	
 	local buycustomsButton = vgui.Create("DButton", customize )
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." " .. carlist[number].car .. ": $" .. total)
 		buycustomsButton:SetSize(0,45)
 		buycustomsButton:Dock(BOTTOM)	
 	
@@ -330,93 +330,93 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
-	fbumper:AddChoice("Bumper 4", 3, false)
-	fbumper:AddChoice("Bumper 5", 4, false)
-	fbumper:AddChoice("Bumper 6", 5, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 4", 3, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 5", 4, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 6", 5, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
-	bbumper:AddChoice("Rear Bumper 3", 2, false)
-	bbumper:AddChoice("Rear Bumper 4", 3, false)
-	bbumper:AddChoice("Rear Bumper 5", 4, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."3", 2, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."4", 3, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."5", 4, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	 
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
-	skirt:AddChoice("Skirt Option 3", 2, false)
-	skirt:AddChoice("Skirt Option 4", 3, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 3", 2, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 4", 3, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(5,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local hood = vgui.Create( "DComboBox", customize )
 	
 	hood:SetPos(675,250)
 	hood:SetSize(200,100)
-	hood:SetValue("Hoods:")
-	hood:AddChoice("Hood Option 1", 0, false)
+	hood:SetValue(translationTable[playerLanguage]["HOODS"]..":")
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 1", 0, false)
 	hood.OnSelect = function( panel, index, value )
 		hoods = index
 		prev.Entity:SetBodygroup(6,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wing = vgui.Create( "DComboBox", customize )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
 	wing.OnSelect = function( panel, index, value )
 		wings = index
 		prev.Entity:SetBodygroup(8,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(675,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 1", 0, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 1", 0, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(9,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	end
@@ -427,67 +427,67 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
-	fbumper:AddChoice("Bumper 4", 3, false)
-	fbumper:AddChoice("Bumper 5", 4, false)
-	fbumper:AddChoice("Bumper 6", 5, false)
-	fbumper:AddChoice("Bumper 7", 6, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 4", 3, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 5", 4, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 6", 5, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 7", 6, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index - 2
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
-	bbumper:AddChoice("Rear Bumper 3", 2, false)
-	bbumper:AddChoice("Rear Bumper 4", 3, false)
-	bbumper:AddChoice("Rear Bumper 5", 4, false)
-	bbumper:AddChoice("Rear Bumper 6", 5, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."3", 2, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."4", 3, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."5", 4, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."6", 5, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
-	skirt:AddChoice("Skirt Option 3", 2, false)
-	skirt:AddChoice("Skirt Option 4", 3, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 3", 2, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 4", 3, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(6,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local hood = vgui.Create( "DComboBox", customize )
 	
 	hood:SetPos(675,250)
 	hood:SetSize(200,100)
-	hood:SetValue("Hoods:")
-	hood:AddChoice("Hood Option 1", 0, false)
+	hood:SetValue(translationTable[playerLanguage]["HOODS"]..":")
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 1", 0, false)
 	hood.OnSelect = function( panel, index, value )
 		hoods = index
 		prev.Entity:SetBodygroup(5,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	
@@ -495,33 +495,33 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
-	wing:AddChoice("Spoiler Option 4", 3, false)
-	wing:AddChoice("Spoiler Option 5", 4, false)
-	wing:AddChoice("Spoiler Option 6", 5, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 4", 3, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 5", 4, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 6", 5, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(7,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(675,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 1", 0, false)
-	wheels:AddChoice("Tire Option 2", 1, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 1", 0, false)
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 2", 1, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(8,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	end
@@ -532,69 +532,69 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
-	fbumper:AddChoice("Bumper 4", 3, false)
-	fbumper:AddChoice("Bumper 5", 4, false)
-	fbumper:AddChoice("Bumper 6", 5, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 4", 3, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 5", 4, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 6", 5, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
-	bbumper:AddChoice("Rear Bumper 3", 2, false)
-	bbumper:AddChoice("Rear Bumper 4", 3, false)
-	bbumper:AddChoice("Rear Bumper 5", 4, false)
-	bbumper:AddChoice("Rear Bumper 6", 5, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."3", 2, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."4", 3, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."5", 4, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."6", 5, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(6,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local hood = vgui.Create( "DComboBox", customize )
 	
 	hood:SetPos(675,250)
 	hood:SetSize(200,100)
-	hood:SetValue("Hoods:")
-	hood:AddChoice("Hood Option 1", 0, false)
-	hood:AddChoice("Hood Option 2", 1, false)
-	hood:AddChoice("Hood Option 3", 2, false)
-	hood:AddChoice("Hood Option 4", 3, false)
-	hood:AddChoice("Hood Option 5", 4, false)
-	hood:AddChoice("Hood Option 6", 5, false)
+	hood:SetValue(translationTable[playerLanguage]["HOODS"]..":")
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 1", 0, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 2", 1, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 3", 2, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 4", 3, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 5", 4, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 6", 5, false)
 	hood.OnSelect = function( panel, index, value )
 		hoods = index
 		prev.Entity:SetBodygroup(5,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	
@@ -602,32 +602,32 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
-	wing:AddChoice("Spoiler Option 4", 3, false)
-	wing:AddChoice("Spoiler Option 5", 4, false)
-	wing:AddChoice("Spoiler Option 6", 5, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 4", 3, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 5", 4, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 6", 5, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(7,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(675,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 1", 0, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 1", 0, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(9,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	end
@@ -639,58 +639,58 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(5,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local hood = vgui.Create( "DComboBox", customize )
 	
 	hood:SetPos(675,250)
 	hood:SetSize(200,100)
-	hood:SetValue("Hoods:")
-	hood:AddChoice("Hood Option 1", 0, false)
-	hood:AddChoice("Hood Option 2", 1, false)
+	hood:SetValue(translationTable[playerLanguage]["HOODS"]..":")
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 1", 0, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 2", 1, false)
 	hood.OnSelect = function( panel, index, value )
 		hoods = index
 		prev.Entity:SetBodygroup(6,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	
@@ -698,29 +698,29 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(7,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(675,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 1", 0, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 1", 0, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(8,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	end
 	
@@ -730,68 +730,68 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
-	fbumper:AddChoice("Bumper 4", 3, false)
-	fbumper:AddChoice("Bumper 5", 4, false)
-	fbumper:AddChoice("Bumper 6", 5, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 4", 3, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 5", 4, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 6", 5, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index - 2
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
-	bbumper:AddChoice("Rear Bumper 3", 2, false)
-	bbumper:AddChoice("Rear Bumper 4", 3, false)
-	bbumper:AddChoice("Rear Bumper 5", 4, false)
-	bbumper:AddChoice("Rear Bumper 6", 5, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."3", 2, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."4", 3, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."5", 4, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."6", 5, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
-	skirt:AddChoice("Skirt Option 3", 2, false)
-	skirt:AddChoice("Skirt Option 4", 3, false)
-	skirt:AddChoice("Skirt Option 5", 4, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 3", 2, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 4", 3, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 5", 4, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(5,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local hood = vgui.Create( "DComboBox", customize )
 	
 	hood:SetPos(675,250)
 	hood:SetSize(200,100)
-	hood:SetValue("Hoods:")
-	hood:AddChoice("Hood Option 2", 0, false)
-	hood:AddChoice("Hood Option 3", 1, false)
+	hood:SetValue(translationTable[playerLanguage]["HOODS"]..":")
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 2", 0, false)
+	hood:AddChoice(translationTable[playerLanguage]["HOODOPTION"].." 3", 1, false)
 	hood.OnSelect = function( panel, index, value )
 		hoods = index
 		prev.Entity:SetBodygroup(6,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	
@@ -799,31 +799,31 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
-	wing:AddChoice("Spoiler Option 4", 3, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 4", 3, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(7,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(675,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 2", 0, false)
-	wheels:AddChoice("Tire Option 3", 1, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 2", 0, false)
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 3", 1, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(8,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	end
@@ -834,74 +834,74 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(4,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
-	skirt:AddChoice("Skirt Option 2", 1, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 2", 1, false)
 	skirt.OnSelect = function( panel, index, value )
 		skirts = index
 		total = 1000
 		prev.Entity:SetBodygroup(5,index)
 		
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wing = vgui.Create( "DComboBox", customize )
 	
 	wing:SetPos(675,250)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)	
-	wing:AddChoice("Spoiler Option 2", 1, false)
-	wing:AddChoice("Spoiler Option 3", 2, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)	
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 2", 1, false)
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 3", 2, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(6,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local wheels = vgui.Create( "DComboBox", customize )
 	
 	wheels:SetPos(450,350)
 	wheels:SetSize(200,100)
-	wheels:SetValue("Wheels:")
-	wheels:AddChoice("Tire Option 1", 0, false)
-	wheels:AddChoice("Tire Option 2", 1, false)
+	wheels:SetValue(translationTable[playerLanguage]["WHEELS"]..":")
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 1", 0, false)
+	wheels:AddChoice(translationTable[playerLanguage]["WHEELOPTION"].." 2", 1, false)
 	wheels.OnSelect = function( panel, index, value )
 		wheelz = index
 		prev.Entity:SetBodygroup(8,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	end
 	
@@ -911,56 +911,56 @@ prev:SetLookAt( ( mn + mx ) * 0.2 )
 	
 	fbumper:SetPos(450,150)
 	fbumper:SetSize(200,100)
-	fbumper:SetValue("Front Bumpers:")
-	fbumper:AddChoice("Bumper 1", 0, false)
-	fbumper:AddChoice("Bumper 2", 1, false)
-	fbumper:AddChoice("Bumper 3", 2, false)
+	fbumper:SetValue(translationTable[playerLanguage]["DEFAULTBUMPERSTRING"]..":")
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 1", 0, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 2", 1, false)
+	fbumper:AddChoice(translationTable[playerLanguage]["BUMPERPARTTEXT"].." 3", 2, false)
 	fbumper.OnSelect = function( panel, index, value )
 		frontbump = index
 		prev.Entity:SetBodygroup(3,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local skirt = vgui.Create( "DComboBox", customize )
 	
 	skirt:SetPos(450,250)
 	skirt:SetSize(200,100)
-	skirt:SetValue("Skirts:")
-	skirt:AddChoice("Skirt Option 1", 0, false)
+	skirt:SetValue(translationTable[playerLanguage]["SKIRTS"]..":")
+	skirt:AddChoice(translationTable[playerLanguage]["SKIRTOPTION"].." 1", 0, false)
 	skirt.OnSelect = function( panel, index, value )
 		total = 1000
 		prev.Entity:SetBodygroup(4,index)
 		skirts = index
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	local bbumper = vgui.Create( "DComboBox", customize )
 	
 	bbumper:SetPos(675,150)
 	bbumper:SetSize(200,100)
-	bbumper:SetValue("Rear Bumpers:")
-	bbumper:AddChoice("Rear Bumper 1", 0, false)
-	bbumper:AddChoice("Rear Bumper 2", 1, false)
+	bbumper:SetValue(translationTable[playerLanguage]["DEFBACKBUMPERSTRING"]..":")
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."1", 0, false)
+	bbumper:AddChoice(translationTable[playerLanguage]["BACKBUMPERTEXT"].."2", 1, false)
 	bbumper.OnSelect = function( panel, index, value )
 		rearbump = index
 		prev.Entity:SetBodygroup(5,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 
 	local wing = vgui.Create( "DComboBox", customize )
 	
 	wing:SetPos(450,350)
 	wing:SetSize(200,100)
-	wing:SetValue("Spoilers:")
-	wing:AddChoice("Spoiler Option 1", 0, false)
+	wing:SetValue(translationTable[playerLanguage]["SPOILERS"]..":")
+	wing:AddChoice(translationTable[playerLanguage]["SPOILEROPTION"].." 1", 0, false)
 	wing.OnSelect = function( panel, index, value )
 		
 		wings = index
 		prev.Entity:SetBodygroup(6,index)
 		total = 1000
-		buycustomsButton:SetText("Buy upgrades for " .. carlist[number].car .. ": $" .. total)
+		buycustomsButton:SetText(translationTable[playerLanguage]["BUYUPGRADESSTRING"].." ".. carlist[number].car .. ": $" .. total)
 	end
 	
 	end
